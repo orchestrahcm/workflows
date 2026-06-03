@@ -1,0 +1,228 @@
+{
+  "schemeName": "WF_LREQUEST",
+  "type": "Screen",
+  "exportDate": "2026-06-03T17:23:00.729Z",
+  "version": "1.0",
+  "rows": [
+    {
+      "seqnr": "000010",
+      "functionName": "COM",
+      "par1": "",
+      "par2": "",
+      "par3": "",
+      "par4": "",
+      "par5": "",
+      "deact": "",
+      "comment": "Annual Leave Request with Manager Approval, One Level"
+    },
+    {
+      "seqnr": "000020",
+      "functionName": "COM",
+      "par1": "",
+      "par2": "",
+      "par3": "",
+      "par4": "",
+      "par5": "",
+      "deact": "",
+      "comment": "HRSP 03062026"
+    },
+    {
+      "seqnr": "000030",
+      "functionName": "GETPERNR",
+      "par1": "",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"==\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Get\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Wf0 Load Current Employee Data Page Get"
+    },
+    {
+      "seqnr": "000040",
+      "functionName": "GETPERNR",
+      "par1": "{\n\"PERNR\" : page.Elements[FieldName=\"PERNR\"].Data\n\n}",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"==\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "WF0 Load Current Employee Data Page Post"
+    },
+    {
+      "seqnr": "000050",
+      "functionName": "GETPERNR",
+      "par1": "{\n\"PERNR\" : page.Elements[FieldName=\"PERNR\"].Data\n\n}",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"!=\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Get\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "WFX Load Workflow Form Employee Data Page Get"
+    },
+    {
+      "seqnr": "000060",
+      "functionName": "PRINT",
+      "par1": "CONT",
+      "par2": "",
+      "par3": "",
+      "par4": "",
+      "par5": "",
+      "deact": "*",
+      "comment": "Print Container to Log, activate in development"
+    },
+    {
+      "seqnr": "000070",
+      "functionName": "PRINT",
+      "par1": "PAGE",
+      "par2": "",
+      "par3": "",
+      "par4": "",
+      "par5": "",
+      "deact": "*",
+      "comment": "Print Page Elements to Log, activate in development"
+    },
+    {
+      "seqnr": "000080",
+      "functionName": "SETDATA",
+      "par1": "MENAME",
+      "par2": "=container.PNP.Manidt",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Get\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Set Manager Name when Page Get Event"
+    },
+    {
+      "seqnr": "000090",
+      "functionName": "TASK",
+      "par1": "{\n\"instatus\" : \"NEW\",\n\"currentstatus\" : \"SUBMITTED\",\n\"wfstatus\" :  \"SUBMITTED\",\n\"resotype\" : \"P\",\n\"resobjid\" : container.PNP.Manid\n\n}",
+      "par2": "{\n\"AWART\" : \"1000\",\n\"PERNR\": page.Elements[FieldName=\"PERNR\"].Data,\n\"DATES\": page.Elements[FieldName=\"DATES\"].Data,\n\"BEGDA\": $substring(page.Elements[FieldName=\"DATES\"].Data, 0, 8),\n\"ENDDA\": $substring(page.Elements[FieldName=\"DATES\"].Data, 8, 8),\n\"NOTES\": page.Elements[FieldName=\"NOTES\"].Data\n\n}",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"==\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOSUBMIT\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "DOSUBMIT - Create Task for Line Manager"
+    },
+    {
+      "seqnr": "000100",
+      "functionName": "MSG",
+      "par1": "Form yöneticinize iletilmiştir.",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"==\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOSUBMIT\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "DOSUBMIT - Show Message"
+    },
+    {
+      "seqnr": "000110",
+      "functionName": "GOURL",
+      "par1": "BACK",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"==\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOSUBMIT\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Go Back after submit"
+    },
+    {
+      "seqnr": "000120",
+      "functionName": "COM",
+      "par1": "",
+      "par2": "",
+      "par3": "",
+      "par4": "",
+      "par5": "",
+      "deact": "",
+      "comment": "Button Visible Statuses"
+    },
+    {
+      "seqnr": "000130",
+      "functionName": "SETVS",
+      "par1": "DOAPPROVE",
+      "par2": "false",
+      "par3": "",
+      "par4": "{\n     \"and\": [\n          {\n               \"==\": [\n                    {\n                         \"var\": \"Status\"\n                    },\n                    \"NEW\"\n               ]\n          },\n          {\n               \"==\": [\n                    {\n                         \"var\": \"PageEvent\"\n                    },\n                    \"Get\"\n               ]\n          }\n     ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "In NEW status, hide DOAPPROVE button"
+    },
+    {
+      "seqnr": "000140",
+      "functionName": "SETVS",
+      "par1": "DOREJECT",
+      "par2": "false",
+      "par3": "",
+      "par4": "{\n     \"and\": [\n          {\n               \"==\": [\n                    {\n                         \"var\": \"Status\"\n                    },\n                    \"NEW\"\n               ]\n          },\n          {\n               \"==\": [\n                    {\n                         \"var\": \"PageEvent\"\n                    },\n                    \"Get\"\n               ]\n          }\n     ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "In NEW status, hide DOREJECT button"
+    },
+    {
+      "seqnr": "000150",
+      "functionName": "SETVS",
+      "par1": "DOSUBMIT",
+      "par2": "false",
+      "par3": "",
+      "par4": "{\n     \"and\": [\n          {\n               \"!=\": [\n                    {\n                         \"var\": \"Status\"\n                    },\n                    \"NEW\"\n               ]\n          },\n          {\n               \"==\": [\n                    {\n                         \"var\": \"PageEvent\"\n                    },\n                    \"Get\"\n               ]\n          }\n     ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "If not NEW status, hide DOSUBMIT button"
+    },
+    {
+      "seqnr": "000160",
+      "functionName": "INFTY",
+      "par1": "{\n\"INFTY\" : \"2001\",\n\"COM\": \"INS\",\n\"PERNR\": page.Elements[FieldName=\"PERNR\"].Data,\n\"BEGDA\": $substring(page.Elements[FieldName=\"DATES\"].Data, 0, 8),\n\"ENDDA\": $substring(page.Elements[FieldName=\"DATES\"].Data, 8, 8),\n\"SUBTY\": \"1000\",\n\"SEQNR\":  \"000\",\n\"OBJPS\":  \"\",\n\"SPRPS\": \"\"\n}",
+      "par2": "{\n\"PERNR\": page.Elements[FieldName=\"PERNR\"].Data,\n\"BEGDA\": $substring(page.Elements[FieldName=\"DATES\"].Data, 0, 8),\n\"ENDDA\": $substring(page.Elements[FieldName=\"DATES\"].Data, 8, 8),\n\"SUBTY\": \"1000\",\n\"AWART\": \"1000\"\n}",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"!=\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOAPPROVE\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Approve Workflow - Insert to Infotype"
+    },
+    {
+      "seqnr": "000170",
+      "functionName": "TASK",
+      "par1": "{\n\"instatus\" : \"SUBMITTED\",\n\"currentstatus\" : \"APPROVED\",\n\"wfstatus\" :  \"APPROVED\",\n\"isactive\" : false,\n\"completetask\": true\n\n}",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"!=\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOAPPROVE\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Approve Workflow - Update Workflow Status"
+    },
+    {
+      "seqnr": "000180",
+      "functionName": "GOURL",
+      "par1": "BACK",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"!=\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOAPPROVE\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Approve Workflow - Go Back "
+    },
+    {
+      "seqnr": "000190",
+      "functionName": "TASK",
+      "par1": "{\n\"instatus\" : \"SUBMITTED\",\n\"currentstatus\" : \"REJECTED\",\n\"wfstatus\" :  \"REJECTED\",\n\"isactive\" : false,\n\"completetask\": true\n\n}",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"!=\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOREJECT\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Reject Workflow - Update Workflow Status"
+    },
+    {
+      "seqnr": "000200",
+      "functionName": "GOURL",
+      "par1": "BACK",
+      "par2": "",
+      "par3": "",
+      "par4": "{\n  \"and\": [\n    {\n      \"!=\": [\n        {\n          \"var\": \"WIId\"\n        },\n       \"0\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PageEvent\"\n        },\n        \"Post\"\n      ]\n    },\n    {\n      \"==\": [\n        {\n          \"var\": \"PostFieldName\"\n        },\n        \"DOREJECT\"\n      ]\n    }\n  ]\n}",
+      "par5": "",
+      "deact": "",
+      "comment": "Reject Workflow - Go Back"
+    }
+  ]
+}
