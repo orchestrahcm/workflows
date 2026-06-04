@@ -1,3 +1,7 @@
+## Workflow List
+- [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
+- [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
+
 # Workflows
 Scheme Based Business Workflows with UI Designs for Web and Mobile
 # 
