@@ -7,7 +7,7 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 
 - [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
 - [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
-# 
+- [Photo Update Workflow](#photo-update-workflow) - A workflow for employee photo update requests.
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
 ### Business Requirement
@@ -32,5 +32,20 @@ Download [Scheme](/WF_AREQUEST.json) and  [Screen](/orc.ess.tm.absrequest.json),
 - Please customize absence types in your time management module.
 - You can exclude any of absences in SETOP function options by using EXFILTER.
 - There is no file attachment feature in this workflow, for absence types that needs document proof, you can add file component and modify your scheme.
+### Versions
+- June 4, 2026 - Initial Commit
+
+## Photo Update Workflow
+![Photo Update Workflow](OrcHCM_PhotoRequestWorkflow.png)
+### Business Requirement
+Company need to have a digital solution to enable workforce to update profile photos through a controlled approval process.
+### Solution Scenerio
+Employee submits a profile photo update request online. HR expoert reviews and approves or rejects from taskbox.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_PHOTO1.json) and [Screen](/orc.hr.wf.photo1.json), and make your changes according to your business requirements.
+### Notes
+- You can define photo validation rules (file type, size, and image dimensions) in your screen and scheme logic.
+- When employee 's photo approved, user should refresh the page to see her/his photo in app header.
+- If your organization needs additional approvals, you can extend the scheme with extra approval steps.
 ### Versions
 - June 4, 2026 - Initial Commit
