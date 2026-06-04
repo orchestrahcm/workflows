@@ -1,9 +1,12 @@
-## Workflow List
-- [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
-- [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
-
 # Workflows
 Scheme Based Business Workflows with UI Designs for Web and Mobile
+
+OrchestraHCM helps teams digitize HR processes with speed, clarity, and confidence.
+With flexible workflow design and user-friendly screens, it turns complex approvals into smooth daily operations.
+From web to mobile, OrchestraHCM delivers a modern employee experience while giving managers full control.
+
+- [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
+- [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
 # 
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
