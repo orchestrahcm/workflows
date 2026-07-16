@@ -8,7 +8,7 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 - [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
 - [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
 - [Photo Update Workflow](#photo-update-workflow) - A workflow for employee photo update requests.
-- [Non-Flextime Overtime Notification](#nonflextime-overtime-notification) - A single-step manager approval process for overtime worked outside the employee's flexible working hours.
+- [Non-Flextime Overtime Notification](#non-flextime-overtime-notification) - A single-step manager approval process for overtime worked outside the employee's flexible working hours.
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
 ### Business Requirement
