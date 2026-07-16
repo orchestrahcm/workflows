@@ -8,6 +8,7 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 - [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
 - [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
 - [Photo Update Workflow](#photo-update-workflow) - A workflow for employee photo update requests.
+- [Non-Flextime Overtime Notification](#nonflextime-overtime-notification) - A single-step manager approval process for overtime worked outside the employee's flexible working hours.
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
 ### Business Requirement
@@ -20,6 +21,7 @@ Download [Scheme](/WF_LREQUEST.json) and  [Screen](/orc.ess.tm.leavereq.json), a
 - Please customize absence types in your time management module, annual leave absence type in scheme is 1000, if different please modify in INFTY function.
 ### Versions
 - June 4, 2026 - Initial Commit
+
 ## Absence Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AbsenceRequestWorkflow.png)
 ### Business Requirement
@@ -42,10 +44,25 @@ Company need to have a digital solution to enable workforce to update profile ph
 ### Solution Scenerio
 Employee submits a profile photo update request online. HR expoert reviews and approves or rejects from taskbox.
 ### Download Files and Upload to OrchestraHCM
-Download [Scheme](/WF_PHOTO1.json) and [Screen](/orc.hr.wf.photo1.json), and make your changes according to your business requirements.
+Download [Scheme](/WF_FLEX.json) and [Screen](/orc.ess.tm.requestaddtime.json), and make your changes according to your business requirements.
 ### Notes
 - You can define photo validation rules (file type, size, and image dimensions) in your screen and scheme logic.
 - When employee 's photo approved, user should refresh the page to see her/his photo in app header.
 - If your organization needs additional approvals, you can extend the scheme with extra approval steps.
 ### Versions
 - June 4, 2026 - Initial Commit
+
+## Non-Flextime Overtime Notification (only via Manager Approval)
+![Non-Flextime Overtime Notification](OrcHCM_NonFlextimeOvertimeNotification.png)
+### Business Requirement
+Company need to have a digital solution to enable employees to notify overtime worked outside their flexible working hours through a controlled approval process.
+### Solution Scenerio
+Employee submits an overtime notification for hours worked outside flexible working hours online. Manager reviews and approves or rejects the request from taskbox.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_LREQUEST.json) and  [Screen](/orc.ess.tm.leavereq.json), and make your changes according to your business requirements.
+### Notes
+- You can define overtime hour/hours in your screen and scheme logic.
+- When the employee's overtime notification is approved, it is automatically reflected in the relevant reporting/payroll processes.
+- If your organization needs additional approvals, you can extend the scheme with extra approval steps.
+### Versions
+- July 16, 2026 - Initial Commit
