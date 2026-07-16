@@ -7,13 +7,14 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 
 - [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
 - [Annual Leave Request (Expat)](#annual-leave-request-expat-only-via-manager-approval) - A single-step process for expat employees where annual leave requests are submitted for manager approval.
-- [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
+- [Absence Request](#absence-request-only-via-manager-approval) - A two-step approval process where different types of absence requests are approved first by the manager and then by HR.
 - [Photo Update Workflow](#photo-update-workflow) - A workflow for employee photo update requests.
 - [NonFlextime Overtime Notification](#nonflextime-overtime-notification-only-via-manager-approval) - A single-step manager approval process for overtime worked outside the employee's flexible working hours.
 - [Time Off Request](#time-off-request) - A single-step manager approval process for requesting time off in return for previously worked overtime.
 - [Half Day Annual Leave Request](#half-day-annual-leave-request-only-via-manager-approval) - A single-step manager approval process for requesting half-day annual leave.
 - [Half Day Annual Leave Request (Expat)](#half-day-annual-leave-request-expat-only-via-manager-approval) - A single-step manager approval process for expat employees to request half-day annual leave.
 - [Remote Work Notification](#remote-work-notification-only-via-manager-approval) - A single-step manager approval process for employees to notify their manager of remote working days.
+- [IT Duty Notification](#it-duty-notification-via-manager-and-hr-approval) - A two-step approval process where IT duty notifications are approved first by the manager and then by HR.
 
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
@@ -137,6 +138,20 @@ Employee submits a remote work notification for his/her manager online. Manager 
 Download [Scheme](/WF_REMOTE.json) and [Screen](/orc.ess.tm.requesthomeofficeinf.json), and make your changes according to your business requirements.
 ### Notes
 - You can define the maximum number of remote working days per week/month in your screen and scheme logic.
+- If your organization needs additional approvals, you can extend the scheme with extra approval steps.
+### Versions
+- July 16, 2026 - Initial Commit
+
+## IT Duty Notification (via Manager and HR Approval)
+![IT Duty Notification](OrcHCM_ITDutyNotification.png)
+### Business Requirement
+Company needs a digital solution to enable workforce to notify IT-related duty assignments through a controlled, multi-step approval process.
+### Solution Scenerio
+Employee submits an IT duty notification online. The request first goes to the manager for approval; once the manager approves, it is forwarded to HR for final approval. If either the manager or HR rejects the request, the process ends. This is a two-step workflow process.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_ITTASK.json) and [Screen](/orc.ess.tm.requestleavevac.json), and make your changes according to your business requirements.
+### Notes
+- The HR approval step can be assigned to a specific HR position/organizational unit; configure this in the scheme routing logic.
 - If your organization needs additional approvals, you can extend the scheme with extra approval steps.
 ### Versions
 - July 16, 2026 - Initial Commit
