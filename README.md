@@ -158,7 +158,7 @@ Download [Scheme](/WF_ITTASK.json) and [Screen](/orc.ess.tm.requestleavevac.json
 - July 16, 2026 - Initial Commit
 
 ## Social Leave Request (only via HR Approval)
-![Social Leave Request ](OrcHCM_PhotoRequestWorkflow.png)
+![Social Leave Request ](OrcHCM_SocialLeaveRequestWorkflow.png)
 ### Business Requirement
 Company needs a digital solution to enable workforce to request social/compassionate leave from their managers.
 ### Solution Scenerio
