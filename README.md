@@ -12,6 +12,7 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 - [Time Off Request](#time-off-request) - A single-step manager approval process for requesting time off in return for previously worked overtime.
 - [Half Day Annual Leave Request](#half-day-annual-leave-request-only-via-manager-approval) - A single-step manager approval process for requesting half-day annual leave.
 - [Half Day Annual Leave Request (Expat)](#half-day-annual-leave-request-expat-only-via-manager-approval) - A single-step manager approval process for expat employees to request half-day annual leave.
+- [Remote Work Notification](#remote-work-notification-only-via-manager-approval) - A single-step manager approval process for employees to notify their manager of remote working days.
 
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
@@ -71,7 +72,6 @@ Download [Scheme](/WF_LREQUEST.json) and  [Screen](/orc.ess.tm.leavereq.json), a
 ### Versions
 - July 16, 2026 - Initial Commit
 
-
 ## Time Off Request
 ![Time Off Request](OrcHCM_TimeOffRequestWorkflow.png)
 ### Business Requirement
@@ -109,6 +109,20 @@ Expat employee requests half-day annual leave from his/her manager online. Manag
 ### Download Files and Upload to OrchestraHCM
 Download [Scheme](/WF_HDAYLEAVEX.json) and [Screen](/orc.ess.tm.requesthdayleaveexpat.json), and make your changes according to your business requirements.
 ### Notes
+- If your organization needs additional approvals, you can extend the scheme with extra approval steps.
+### Versions
+- July 16, 2026 - Initial Commit
+
+## Remote Work Notification (only via Manager Approval)
+![Remote Work Notification](OrcHCM_RemoteWorkNotification.png)
+### Business Requirement
+Company needs a digital solution to enable workforce to notify their managers of remote working days through a controlled approval process.
+### Solution Scenerio
+Employee submits a remote work notification for his/her manager online. Manager approves or rejects from taskbox. Manager can also wants revision. When the manager requests a revision, personnel can resend or cancel the request. This is a one-step workflow process.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_REMOTE.json) and [Screen](/orc.ess.tm.requesthomeofficeinf.json), and make your changes according to your business requirements.
+### Notes
+- You can define the maximum number of remote working days per week/month in your screen and scheme logic.
 - If your organization needs additional approvals, you can extend the scheme with extra approval steps.
 ### Versions
 - July 16, 2026 - Initial Commit
