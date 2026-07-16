@@ -6,6 +6,7 @@ With flexible workflow design and user-friendly screens, it turns complex approv
 From web to mobile, OrchestraHCM delivers a modern employee experience while giving managers full control.
 
 - [Annual Leave Request](#annual-leave-request-only-via-manager-approval) - A single-step process where annual leave requests are submitted for manager approval.
+- [Annual Leave Request (Expat)](#annual-leave-request-expat-only-via-manager-approval) - A single-step process for expat employees where annual leave requests are submitted for manager approval.
 - [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
 - [Photo Update Workflow](#photo-update-workflow) - A workflow for employee photo update requests.
 - [NonFlextime Overtime Notification](#nonflextime-overtime-notification-only-via-manager-approval) - A single-step manager approval process for overtime worked outside the employee's flexible working hours.
@@ -26,6 +27,19 @@ Download [Scheme](/WF_LREQUEST.json) and  [Screen](/orc.ess.tm.leavereq.json), a
 - Please customize absence types in your time management module, annual leave absence type in scheme is 1000, if different please modify in INFTY function.
 ### Versions
 - June 4, 2026 - Initial Commit
+- 
+## Annual Leave Request (Expat) (only via Manager Approval)
+![Annual Leave Request (Expat)](OrcHCM_AnnualLeaveRequestExpatWorkflow.png)
+### Business Requirement
+Company needs a digital solution to enable expat employees to request annual leave from their managers.
+### Solution Scenerio
+Expat employee requests annual leave from his/her manager online. Manager approves or rejects from taskbox. This is a one-step workflow process.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_LEAVEX.json) and  [Screen](/orc.ess.tm.requestleavembtexpat.json), and make your changes according to your business requirements.
+### Notes
+- Please customize absence types in your time management module, annual leave absence type in scheme is 1000, if different please modify in INFTY function.
+### Versions
+- July 16, 2026 - Initial Commit
 
 ## Absence Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AbsenceRequestWorkflow.png)
