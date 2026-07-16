@@ -9,6 +9,8 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 - [Absence Request](#absence-request-only-via-manager-approval) - A single-step manager approval process for different types of absence requests.
 - [Photo Update Workflow](#photo-update-workflow) - A workflow for employee photo update requests.
 - [NonFlextime Overtime Notification](#nonflextime-overtime-notification-only-via-manager-approval) - A single-step manager approval process for overtime worked outside the employee's flexible working hours.
+- [Time Off Request](#time-off-request) - A single-step manager approval process for requesting time off in return for previously worked overtime.
+
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
 ### Business Requirement
@@ -63,6 +65,22 @@ Download [Scheme](/WF_LREQUEST.json) and  [Screen](/orc.ess.tm.leavereq.json), a
 ### Notes
 - You can define overtime hour/hours in your screen and scheme logic.
 - When the employee's overtime notification is approved, it is automatically reflected in the relevant reporting/payroll processes.
+- If your organization needs additional approvals, you can extend the scheme with extra approval steps.
+### Versions
+- July 16, 2026 - Initial Commit
+
+
+## Time Off Request
+![Time Off Request](OrcHCM_TimeOffRequestWorkflow.png)
+### Business Requirement
+Company needs a digital solution to enable employees to request time off of previously worked overtime through a controlled approval process.
+### Solution Scenerio
+Employee submits a time off request from his/her manager online. Manager approves or rejects from taskbox. Manager can also wants revision. When the manager requests a revision, personnel can resend or cancel the request. This is a one-step workflow process.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_FREETIME.json) and [Screen](/orc.ess.tm.requestfreetime.json), and make your changes according to your business requirements.
+### Notes
+- You can define the maximum time off balance and eligibility rules in your screen and scheme logic.
+- The requested time off is automatically deducted from the employee's accrued balance upon approval.
 - If your organization needs additional approvals, you can extend the scheme with extra approval steps.
 ### Versions
 - July 16, 2026 - Initial Commit
