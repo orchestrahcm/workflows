@@ -11,6 +11,7 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 - [NonFlextime Overtime Notification](#nonflextime-overtime-notification-only-via-manager-approval) - A single-step manager approval process for overtime worked outside the employee's flexible working hours.
 - [Time Off Request](#time-off-request) - A single-step manager approval process for requesting time off in return for previously worked overtime.
 - [Half Day Annual Leave Request](#half-day-annual-leave-request-only-via-manager-approval) - A single-step manager approval process for requesting half-day annual leave.
+- [Half Day Annual Leave Request (Expat)](#half-day-annual-leave-request-expat-only-via-manager-approval) - A single-step manager approval process for expat employees to request half-day annual leave.
 
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
@@ -94,6 +95,19 @@ Company needs a digital solution to enable employees to request half-day annual 
 Employee requests half-day annual leave from his/her manager online. Manager approves or rejects from taskbox. This is a one-step workflow process.
 ### Download Files and Upload to OrchestraHCM
 Download [Scheme](/WF_HDAYLEAVE.json) and [Screen](/orc.ess.tm.requesthdayleave.json), and make your changes according to your business requirements.
+### Notes
+- If your organization needs additional approvals, you can extend the scheme with extra approval steps.
+### Versions
+- July 16, 2026 - Initial Commit
+
+## Half Day Annual Leave Request (Expat) (only via Manager Approval)
+![Half Day Annual Leave Request (Expat)](OrcHCM_HalfDayAnnualLeaveRequestExpatWorkflow.png)
+### Business Requirement
+Company needs a digital solution to enable expat employees to request half-day annual leave from their managers.
+### Solution Scenerio
+Expat employee requests half-day annual leave from his/her manager online. Manager approves or rejects from taskbox. This is a one-step workflow process.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_HDAYLEAVEX.json) and [Screen](/orc.ess.tm.requesthdayleaveexpat.json), and make your changes according to your business requirements.
 ### Notes
 - If your organization needs additional approvals, you can extend the scheme with extra approval steps.
 ### Versions
