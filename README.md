@@ -15,6 +15,7 @@ From web to mobile, OrchestraHCM delivers a modern employee experience while giv
 - [Half Day Annual Leave Request (Expat)](#half-day-annual-leave-request-expat-only-via-manager-approval) - A single-step manager approval process for expat employees to request half-day annual leave.
 - [Remote Work Notification](#remote-work-notification-only-via-manager-approval) - A single-step manager approval process for employees to notify their manager of remote working days.
 - [IT Duty Notification](#it-duty-notification-via-manager-and-hr-approval) - A two-step approval process where IT duty notifications are approved first by the manager and then by HR.
+- [Social Leave Request](#social-leave-request-only-via-hr-approval) - A single-step hr approval process for requesting social/compassionate leave.
 
 ## Annual Leave Request (only via Manager Approval)
 ![Annual Leave Request](OrcHCM_AnnualLeaveRequestWorkflow.png)
@@ -152,6 +153,20 @@ Employee submits an IT duty notification online. The request first goes to the m
 Download [Scheme](/WF_ITTASK.json) and [Screen](/orc.ess.tm.requestleavevac.json), and make your changes according to your business requirements.
 ### Notes
 - The HR approval step can be assigned to a specific HR position/organizational unit; configure this in the scheme routing logic.
+- If your organization needs additional approvals, you can extend the scheme with extra approval steps.
+### Versions
+- July 16, 2026 - Initial Commit
+
+## Social Leave Request (only via HR Approval)
+![Social Leave Request ](OrcHCM_PhotoRequestWorkflow.png)
+### Business Requirement
+Company needs a digital solution to enable workforce to request social/compassionate leave from their managers.
+### Solution Scenerio
+Employee requests social leave from his/her hr manager online. HR approves or rejects from taskbox. This is a one-step workflow process.
+### Download Files and Upload to OrchestraHCM
+Download [Scheme](/WF_SOCIAL.json) and [Screen](/orc.ess.tm.requestsocialleave.json), and make your changes according to your business requirements.
+### Notes
+- You may want to add a file attachment component for social leave types that require document proof (e.g., marriage certificate, death certificate).
 - If your organization needs additional approvals, you can extend the scheme with extra approval steps.
 ### Versions
 - July 16, 2026 - Initial Commit
